@@ -10,11 +10,11 @@ import java.util.regex.Pattern;
 
 public class Autor {
 
-    private static final String regex = "^(.+)@(.+)$";
     private String nome;
     private String email;
     private String biografia;
     private String data;
+    private static final String regex = "^(.+)@(.+)$";
 
 //    private LocalDate data;
 
@@ -30,7 +30,7 @@ public class Autor {
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             this.data = LocalDate.now().format(formatador);
         } else {
-            System.out.println("Email Inválido");
+            System.out.println("E-mail Inválido");
         }
 
 
