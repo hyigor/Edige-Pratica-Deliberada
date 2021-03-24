@@ -31,9 +31,9 @@ public class AutorDao {
             a = (Autor) it.next();
 
             if(it.hasNext()){
-                s += a.getNome() + ", " + a.getEmail() + ", " + a.getBiografia() + ", " + a.getData() +"\n";
+                s += a + "\n";
             } else {
-                s += a.getNome() + ", " + a.getEmail() + ", " + a.getBiografia() + ", " + a.getData()+".";
+                s += a +".";
             }
         }
 

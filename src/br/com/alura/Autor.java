@@ -10,11 +10,11 @@ import java.util.regex.Pattern;
 
 public class Autor {
 
-    private static final String regex = "^(.+)@(.+)$";
     private String nome;
     private String email;
     private String biografia;
     private String data;
+    private static final String regex = "^(.+)@(.+)$";
 
 //    private LocalDate data;
 
@@ -22,15 +22,16 @@ public class Autor {
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
-        if(matcher.matches()){
-//            System.out.println("Email Válido! Autor criado!");
+        if(matcher.matches() && !nome.isEmpty() && !biografia.isEmpty()){
+//          System.out.println("Email Válido! Autor criado!");
             this.nome = nome;
             this.email = email;
             this.biografia = biografia;
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             this.data = LocalDate.now().format(formatador);
         } else {
-            System.out.println("Email Inválido");
+            throw new IllegalArgumentException("Dados inválidos! Todos os campos devem ser preenchidos e o e-mail deve ser válido.");
+            // caso algum campo esteja vazio ou o e-mail seja inválido essa excpection será lançada
         }
 
 
@@ -60,5 +61,8 @@ public class Autor {
         return outro.getEmail().equals(this.email);
     }
 
-
+    @Override
+    public String toString() {
+        return this.getNome() + ", " + this.getEmail() + ", " + this.getBiografia() + ", " + this.getData();
+    }
 }
