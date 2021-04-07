@@ -19,22 +19,10 @@ public class Autor {
 //    private LocalDate data;
 
     public Autor(String nome, String email, String biografia){
-
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(email);
-        if(matcher.matches() && !nome.isEmpty() && !biografia.isEmpty()){
-//          System.out.println("Email Válido! Autor criado!");
-            this.nome = nome;
-            this.email = email;
-            this.biografia = biografia;
-            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            this.data = LocalDate.now().format(formatador);
-        } else {
-            throw new IllegalArgumentException("Dados inválidos! Todos os campos devem ser preenchidos e o e-mail deve ser válido.");
-            // caso algum campo esteja vazio ou o e-mail seja inválido essa excpection será lançada
-        }
-
-
+        setNome(nome);
+        setEmail(email);
+        setBiografia(biografia);
+        setData();
     }
 
     public String getNome() {
@@ -51,6 +39,37 @@ public class Autor {
 
     public String getData() {
         return data;
+    }
+
+    public void setNome(String nome) {
+        if(!nome.isEmpty()){
+            this.nome = nome;
+        } else {
+            throw new IllegalArgumentException("Inválido! Você precisa digitar o nome!");
+        }
+    }
+
+    public void setBiografia(String biografia) {
+        if(!biografia.isEmpty()){
+            this.biografia = biografia;
+        } else {
+            throw new IllegalArgumentException("Inválido! Você precisa digitar a biográfia!");
+        }
+    }
+
+    public void setEmail(String email) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            this.email = email;
+        } else {
+            throw new IllegalArgumentException("Inválido! Você precisa digitar um e-mail válido!");
+        }
+    }
+
+    public void setData() {
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.data = LocalDate.now().format(formatador);
     }
 
     @Override
