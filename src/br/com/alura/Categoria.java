@@ -20,7 +20,11 @@ public class Categoria {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(!nome.isEmpty()){
+            this.nome = nome;
+        } else {
+            throw new IllegalArgumentException("Inválido! Você precisa digitar o nome!");
+        }
     }
 
     public String getData() {

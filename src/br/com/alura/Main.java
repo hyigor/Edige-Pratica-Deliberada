@@ -14,7 +14,7 @@ public class Main {
         autorDao.insereAutor(autor2);
         autorDao.insereAutor(autor3);
 
-        System.out.println(autorDao.getListaAutores());
+//        System.out.println(autorDao.getListaAutores());
 //        System.out.println(autorDao.igual(autor3));
 
 
@@ -31,7 +31,25 @@ public class Main {
         categoriaDao.insereCategoria(ct3);
         categoriaDao.insereCategoria(ct4);
 
-        System.out.println(categoriaDao.getListaCategorias());
+//        System.out.println(categoriaDao.getListaCategorias());
+
+        Livro livro1 = new Livro("Livro1", "978-3-16-148410-0", "aaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbb", 50, autor, ct1, 50.0);
+        Livro livro2= new Livro("Livro2", "978-4-16-148410-0", "bbbbbbbbbbbbbbbb", "ccccccccccccccccc", 100, autor1, ct2, 150.0);
+        Livro livro3 = new Livro("Livro3", "978-5-16-148410-0", "ccccccccccccccccc", "ddddddddddddddddddd", 150, autor2, ct3, 250.0);
+        Livro livro4 = new Livro("Livro4", "978-5-16-148410-0", "ccccccccccccccccccccccccccccccccccccccccccccccc", "ddddddddddddddddddd", 150, autor2, ct3, 250.0);
+
+        LivroDao livroDao = new LivroDao();
+
+
+        livroDao.insereLivro(livro1);
+        livroDao.insereLivro(livro2);
+        livroDao.insereLivro(livro3);
+        livroDao.insereLivro(livro4);
+
+        System.out.println(livroDao.getListaLivros());
+
+
+
 
 
 
