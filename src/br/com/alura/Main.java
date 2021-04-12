@@ -49,6 +49,22 @@ public class Main {
         System.out.println(livroDao.getListaLivros());
 
 
+        Buscar buscar = new Buscar(livroDao);
+
+        Livro livroBuscado1 = buscar.buscar("Livro1");
+        Livro livroBuscado2 = buscar.buscar("Livro3");
+
+
+
+        VendaDao vendaDao = new VendaDao();
+
+        vendaDao.adicionarNoCarrinho(livroBuscado1);
+        vendaDao.adicionarNoCarrinho(livroBuscado2);
+
+
+        System.out.println(vendaDao.vender());
+
+
 
 
 
