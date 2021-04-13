@@ -22,7 +22,7 @@ public class Buscar {
     public Livro buscar(String titulo){
         for(Livro livro : listaLivros){
             if(livro.getTitulo().equals(titulo)){
-                System.out.println("\nLivro encontrado com sucesso!");
+                System.out.println("\nO livro " + livro.getTitulo() +" foi encontrado com sucesso!");
                 return livro;
             }
         }
