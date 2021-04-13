@@ -1,6 +1,10 @@
-package br.com.alura;
+package br.com.alura.dao;
+
+import br.com.alura.modelo.Livro;
+import br.com.alura.modelo.Venda;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -46,6 +50,10 @@ public class VendaDao {
         }
         s += "\n Valor total da venda: " + total;
         return s;
+    }
+
+    public List<Venda> listaVendas(){
+        return Collections.unmodifiableList(listaVendas);
     }
 
 

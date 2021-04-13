@@ -1,15 +1,13 @@
-package br.com.alura;
+package br.com.alura.modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Venda {
 
     private Livro livro;
     private double preco;
-    private String dataVenda;
+    public String dataVenda;
 
     public Venda(Livro livro){
         setLivro(livro);

@@ -1,4 +1,4 @@
-package br.com.alura;
+package br.com.alura.modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

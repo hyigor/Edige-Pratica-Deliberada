@@ -1,5 +1,8 @@
 package br.com.alura;
 
+import br.com.alura.dao.LivroDao;
+import br.com.alura.modelo.Livro;
+
 import java.util.List;
 
 public class Buscar {
@@ -19,6 +22,7 @@ public class Buscar {
     public Livro buscar(String titulo){
         for(Livro livro : listaLivros){
             if(livro.getTitulo().equals(titulo)){
+                System.out.println("\nLivro encontrado com sucesso!");
                 return livro;
             }
         }
