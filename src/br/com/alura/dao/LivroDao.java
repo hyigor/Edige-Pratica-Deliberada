@@ -1,4 +1,6 @@
-package br.com.alura;
+package br.com.alura.dao;
+
+import br.com.alura.modelo.Livro;
 
 import java.util.ArrayList;
 import java.util.Collections;

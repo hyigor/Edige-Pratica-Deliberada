@@ -1,4 +1,4 @@
-package br.com.alura;
+package br.com.alura.modelo;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

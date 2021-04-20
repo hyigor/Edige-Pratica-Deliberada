@@ -1,10 +1,7 @@
-package br.com.alura;
-
-import javafx.scene.input.DataFormat;
+package br.com.alura.modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
